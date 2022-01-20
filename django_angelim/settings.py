@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'django_angelim.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'angelim',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'NAME': 'daj2pbl8nptd44',
+        'USER': 'fcpfcguapwywgc',
+        'PASSWORD': 'f938b7dae55c5e8b39b163849645b07c401199126cd01c48830ec2ee10abe33e',
+        'HOST': 'ec2-44-199-52-133.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
