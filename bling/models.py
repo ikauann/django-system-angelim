@@ -7,4 +7,3 @@ class BlingEstoque(models.Model):
 
     sku = models.IntegerField(primary_key=True)
     estoque = models.CharField(max_length=300)
-
