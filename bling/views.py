@@ -13,8 +13,10 @@ class BlingEstoqueList(generics.ListCreateAPIView):
     queryset = BlingEstoque.objects.all()[:10]
     serializer_class = BlingEstoqueSerializar
 
-    def post(self, request):
-
-        data_post = request.data
-        print(data_post)
-        print(type(data_post))
+    # def post(self, request, pk):
+    #
+    #     print("=========================" * 40)
+    #
+    #     data_post = request.data
+    #     #print(data_post)
+    #     #print(type(data_post))
