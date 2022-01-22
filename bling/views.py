@@ -10,7 +10,7 @@ from .serializers import BlingEstoqueSerializar
 
 class BlingEstoqueList(generics.ListCreateAPIView):
 
-    queryset = BlingEstoque.objects.all()[:10]
+    queryset = BlingEstoque.objects.all()
     serializer_class = BlingEstoqueSerializar
 
     # def post(self, request, pk):
