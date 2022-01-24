@@ -5,7 +5,7 @@ from .models import BlingEstoque
 
 class BlingEstoqueSerializar(serializers.ModelSerializer):
 
-    sku = serializers.IntegerField(primary_key=True)
+    sku = serializers.IntegerField()
     estoque = serializers.CharField(max_length=300)
 
     class Meta:
