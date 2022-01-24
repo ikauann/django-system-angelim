@@ -15,19 +15,11 @@ class BlingEstoqueList(generics.ListCreateAPIView):
     serializer_class = BlingEstoqueSerializar
 
     def post(self, request):
-    
-        print("=" * 40)
-    
+        print('=*='*100)
         data_post = request.data
         data_post = dict(data_post)
-        print(data_post)
-        print(type(data_post))
 
         data_post_tratado = tratamento_qj(data_post)
-
-        serializer = BlingEstoqueSerializar(data=data_post_tratado)
-        print(serializer)
-
-        serializer.save()
-        Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
+        print(data_post_tratado)
+        print('=*='*100)
 
