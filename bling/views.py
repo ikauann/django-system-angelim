@@ -23,9 +23,9 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         print(data_post)
         print(type(data_post))
 
-        data_post = tratamento_qj(data_post)
+        data_post_tratado = tratamento_qj(data_post)
 
-        serializer = BlingEstoqueSerializar(data_post)
+        serializer = BlingEstoqueSerializar(data=data_post_tratado)
         print(serializer)
         if serializer.is_valid():
             serializer.save()
