@@ -17,5 +17,6 @@ class BlingEstoqueList(generics.ListCreateAPIView):
     
         print("=========================" * 40)
     
-        self.data_post = request.data
-        return self.data_post
+        data_post = request.data
+        print(data_post)
+        print(type(data_post))
