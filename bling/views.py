@@ -23,5 +23,5 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         print(data_post)
         print(type(data_post))
 
-        #tratamento_qj(data_post)
+        tratamento_qj(data_post)
 
