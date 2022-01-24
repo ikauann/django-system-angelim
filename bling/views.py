@@ -2,10 +2,10 @@ from rest_framework import generics
 from .models import BlingEstoque
 from .serializers import BlingEstoqueSerializar
 
-# from rest_framework.response import Response
-# from rest_framework import status
+from rest_framework.response import Response
+from rest_framework import status
 
-# from django.http import QueryDict
+from django.http import QueryDict
 
 from bibliotecas import tratamento_qj
 
@@ -24,4 +24,11 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         print(type(data_post))
 
         tratamento_qj(data_post)
+
+        serializer = BlingEstoqueSerializar(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            print(Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK))
+        else:
+            print(Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST))
 
