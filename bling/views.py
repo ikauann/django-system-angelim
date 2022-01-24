@@ -27,9 +27,7 @@ class BlingEstoqueList(generics.ListCreateAPIView):
 
         serializer = BlingEstoqueSerializar(data=data_post_tratado)
         print(serializer)
-        if serializer.is_valid():
-            serializer.save()
-            print(Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK))
-        else:
-            print(Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST))
+
+        serializer.save()
+        Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
 
