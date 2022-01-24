@@ -6,4 +6,4 @@ def tratamento_qj(item):
         'sku':sku,
         'estoque': estoque
     }
-    return dicionario
+    print(dicionario)
