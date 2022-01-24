@@ -7,6 +7,8 @@ from rest_framework import status
 
 from django.http import QueryDict
 
+import json
+
 
 class BlingEstoqueList(generics.ListCreateAPIView):
 
@@ -18,5 +20,6 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         print("=" * 40)
     
         data_post = request.data
+        data_post = json.dumps(data_post)
         print(data_post)
         print(type(data_post))
