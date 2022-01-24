@@ -2,12 +2,12 @@ from rest_framework import generics
 from .models import BlingEstoque
 from .serializers import BlingEstoqueSerializar
 
-from rest_framework.response import Response
-from rest_framework import status
+# from rest_framework.response import Response
+# from rest_framework import status
 
-from django.http import QueryDict
+# from django.http import QueryDict
 
-import bibliotecas
+from bibliotecas import tratamento_qj
 
 class BlingEstoqueList(generics.ListCreateAPIView):
 
@@ -23,5 +23,5 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         print(data_post)
         print(type(data_post))
 
-        #bibliotecas.tratamento_qj(data_post)
+        #tratamento_qj(data_post)
 
