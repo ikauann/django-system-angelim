@@ -33,11 +33,8 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         data_post = request.data
         data_post = dict(data_post)
 
-        print(data_post)
-        print('1 : terminei de rodar')
-
-        #tratamento_qj(data_post)
-        #print('=*='*100)
+        tratamento_qj(data_post)
+        print('=*='*100)
 
         return Response({"status":"sucess"}, status=status.HTTP_200_OK)
         
