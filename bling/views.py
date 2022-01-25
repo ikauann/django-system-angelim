@@ -20,7 +20,7 @@ def tratamento_qj(items):
             'estoque': estoque
         }
         dicts.append(dicionario)
-    print(dicts)
+    return dicts
 
 class BlingEstoqueList(generics.ListCreateAPIView):
 
