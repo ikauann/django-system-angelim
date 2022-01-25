@@ -33,7 +33,8 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         data_post = request.data
         data_post = dict(data_post)
 
-        tratamento_qj(data_post)
+        for anuncio in tratamento_qj(data_post):
+            print(anuncio)
         print('=*='*100)
 
         return Response({"status":"sucess"}, status=status.HTTP_200_OK)
