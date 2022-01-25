@@ -30,6 +30,7 @@ class BlingEstoqueList(generics.ListCreateAPIView):
         data_post = dict(data_post)
 
         print(data_post)
+        print('1 : terminei de rodar')
 
         #tratamento_qj(data_post)
         #print('=*='*100)
