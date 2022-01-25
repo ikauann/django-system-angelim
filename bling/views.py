@@ -8,15 +8,15 @@ from rest_framework import status
 from django.http import QueryDict
 
 #tratar query dict
-def tratamento_qj(item):
-    item = eval(item['data'][0])
-    sku = item['retorno']['estoques'][0]['estoque']['codigo']
-    estoque = item['retorno']['estoques'][0]['estoque']['estoqueAtual']
-    dicionario = {
-        'sku':sku,
-        'estoque': estoque
-    }
-    print(dicionario)
+# def tratamento_qj(item):
+#     item = eval(item['data'][0])
+#     sku = item['retorno']['estoques'][0]['estoque']['codigo']
+#     estoque = item['retorno']['estoques'][0]['estoque']['estoqueAtual']
+#     dicionario = {
+#         'sku':sku,
+#         'estoque': estoque
+#     }
+#     print(dicionario)
 
 class BlingEstoqueList(generics.ListCreateAPIView):
 
