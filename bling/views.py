@@ -7,7 +7,16 @@ from rest_framework import status
 
 from django.http import QueryDict
 
-from bibliotecas import tratamento_qj
+#tratar query dict
+def tratamento_qj(item):
+    item = eval(item['data'][0])
+    sku = item['retorno']['estoques'][0]['estoque']['codigo']
+    estoque = item['retorno']['estoques'][0]['estoque']['estoqueAtual']
+    dicionario = {
+        'sku':sku,
+        'estoque': estoque
+    }
+    print(dicionario)
 
 class BlingEstoqueList(generics.ListCreateAPIView):
 
@@ -15,11 +24,16 @@ class BlingEstoqueList(generics.ListCreateAPIView):
     serializer_class = BlingEstoqueSerializar
 
     def post(self, request):
-        print('=*='*100)
+
+        print('*='*100)
         data_post = request.data
         data_post = dict(data_post)
 
-        data_post_tratado = tratamento_qj(data_post)
-        print(data_post_tratado)
-        print('=*='*100)
+        print(data_post)
+
+        #tratamento_qj(data_post)
+        #print('=*='*100)
+
+        return Response({"status":"sucess"}, status=status.HTTP_200_OK)
+        
 
