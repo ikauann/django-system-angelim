@@ -10,5 +10,5 @@ class BlingEstoqueSerializar(serializers.ModelSerializer):
         model = BlingEstoque
         fields = '__all__'
 
-        def create(self, validated_data):
-            print(validated_data)
+    def create(self, validated_data):
+        print(validated_data)
