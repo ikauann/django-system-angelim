@@ -29,15 +29,14 @@ class BlingEstoqueList(generics.ListCreateAPIView):
 
     def post(self, request):
 
-        print('*='*100)
         data_post = request.data
         data_post = dict(data_post)
 
         updates = []
-        for anuncio in tratamento_qj(data_post):
-            updates.append(anuncio)
+        for produto in tratamento_qj(data_post):
+            updates.append(produto)
 
-            BlingEstoqueSerializar.create(self, validated_data=anuncio)
+            BlingEstoqueSerializar.create(self, validated_data=produto)
 
         return Response({"status":"sucess"}, status=status.HTTP_200_OK)
         

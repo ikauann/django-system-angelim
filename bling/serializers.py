@@ -11,4 +11,7 @@ class BlingEstoqueSerializar(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        print(validated_data)
+        obj, created = BlingEstoque.objects.update_or_create(
+        first_name='John', last_name='Lennon',
+        defaults={'first_name': 'Bob'},
+        )
