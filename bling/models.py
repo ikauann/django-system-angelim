@@ -5,5 +5,5 @@ class BlingEstoque(models.Model):
 
     objects = models.Manager()
 
-    sku = models.CharField(primary_key=True)
+    sku = models.CharField(max_length=300)
     estoque = models.CharField(max_length=300)
