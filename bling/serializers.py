@@ -15,7 +15,7 @@ class BlingEstoqueSerializar(serializers.ModelSerializer):
 
     def create(self, validated_data):
         obj, created = BlingEstoque.objects.update_or_create(
-        sku=0, estoque=0,
+        sku=validated_data['sku'], estoque=validated_data['estoque'],
         defaults={'sku': validated_data['sku'], 'estoque': validated_data['estoque']},
         )
         return Response({"status":"sucess"}, status=status.HTTP_200_OK)
