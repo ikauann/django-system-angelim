@@ -1,6 +1,7 @@
 import requests
 import json
 from bling.models import BlingEstoque
+import telegram
 
 def salvar_db(data):
     for d in data:
@@ -17,6 +18,19 @@ def salvar_db(data):
 
 
 def exec():
+
+    #telegram:
+    token = '1974108710:AAEbiqss0ASLoSp8Qe2coKbTnn8YC5PrA78'
+    bot = telegram.Bot(token=token)
+
+    chat_id = '1402282485'
+    kwargs = {
+        'chat_id': chat_id,
+        'msg': 'Job iniciado'
+    }
+    bot.sendMessage(kwargs['chat_id'], kwargs['msg'])
+
+    #bling:
     api_key = 'd4a1fc2cdb7bc18dbb931e87801b8baa9d3fd41eecfd896a8699e18f861ccffd00ec7709'
     payload = {'apikey': api_key}
 
@@ -40,3 +54,10 @@ def exec():
         else:
             salvar_db(data)
             count_paginacao += 1
+
+    #telegram:
+    kwargs = {
+    'chat_id': chat_id,
+    'msg': 'Job finalizado'
+    }
+    bot.sendMessage(kwargs['chat_id'], kwargs['msg'])
